@@ -9,6 +9,11 @@ namespace JakeCleary.PocketMongrels.Core.Entity
 
         public string Name { get; set; }
 
-        public List<Animal> Animals { get; set; }
+        public List<Animal> Animals { get; }
+
+        public User()
+        {
+            Animals = new List<Animal>();
+        }
     }
 }
