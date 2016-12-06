@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace JakeCleary.PocketMongrels.Core.Entity
 {
-    public class User
+    public class User : IGloballyUniqueEntity
     {
-        public Guid Uuid { get; } = Guid.NewGuid();
+        public Guid Guid { get; } = Guid.NewGuid();
 
         public string Name { get; set; }
 

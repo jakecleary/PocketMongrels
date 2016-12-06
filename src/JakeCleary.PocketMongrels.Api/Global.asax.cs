@@ -27,10 +27,10 @@ namespace JakeCleary.PocketMongrels.Api
             var builder = new ContainerBuilder();
             var config = GlobalConfiguration.Configuration;
 
-            // Register the controllers
+            // Register the controllers and repositories.
             builder.RegisterType<UsersController>().InstancePerRequest();
-            builder.RegisterType<UserRepository>().As<IRepository<User>>().SingleInstance();
-            //builder.RegisterType<AnimalsController>().InstancePerRequest()
+            builder.RegisterType<Repository<User>>().As<IRepository<User>>().SingleInstance();
+            builder.RegisterType<Repository<Animal>>().As<IRepository<Animal>>().SingleInstance();
 
             var container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);

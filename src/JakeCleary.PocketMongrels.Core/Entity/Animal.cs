@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace JakeCleary.PocketMongrels.Core.Entity
 {
-    public class Animal
+    public class Animal : IGloballyUniqueEntity
     {
-        public Guid Uuid { get; } = Guid.NewGuid();
+        public Guid Guid { get; } = Guid.NewGuid();
 
         public string Name { get; set; }
 
