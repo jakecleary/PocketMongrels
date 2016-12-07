@@ -27,9 +27,12 @@ namespace JakeCleary.PocketMongrels.Api
             var builder = new ContainerBuilder();
             var config = GlobalConfiguration.Configuration;
 
-            // Register the controllers and repositories.
+            // Register the controllers.
             builder.RegisterType<UsersController>().InstancePerRequest();
             builder.RegisterType<AnimalsController>().InstancePerRequest();
+            builder.RegisterType<ActionsController>().InstancePerRequest();
+
+            // Register the repositories.
             builder.RegisterType<Repository<User>>().As<IRepository<User>>().SingleInstance();
             builder.RegisterType<Repository<Animal>>().As<IRepository<Animal>>().SingleInstance();
 
