@@ -1,45 +1,47 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace JakeCleary.PocketMongrels.Core.Entity
 {
     public class Animal : IGloballyUniqueEntity
     {
         private const int ScorePrecision = 2;
-        private const int MaxScore = 10;
+        public const int MinScore = 0;
+        public const int MaxScore = 10;
 
         public Guid Guid { get; } = Guid.NewGuid();
-
         public string Name { get; set; }
-
         public Type Type { get; set; }
 
+        public Animal()
+        {
+            // Start off with neutral hunger and happiness.
+            Hunger = 0.5;
+            Happiness = 0.5;
+            LastFeed = DateTime.UtcNow;
+            LastPet = DateTime.UtcNow;
+            Born = DateTime.UtcNow;
+        }
+
+        private double _hunger;
         public double Hunger
         {
-            get
-            {
-                var daysSinceLastFeed = (DateTime.UtcNow - LastFeed).TotalHours;
-                var hungerScore = daysSinceLastFeed * HungerModifier;
-                var roundedHungerScore = Math.Round(hungerScore, ScorePrecision);
-
-                return Math.Min(MaxScore, roundedHungerScore);
-            }
+            get { return CalculateMetricScore(Action.Feed); }
+            set { _hunger = value; }
         }
 
+        private double _happiness;
         public double Happiness
         {
-            get
-            {
-                var daysSinceLastPet = (DateTime.UtcNow - LastPet).TotalHours;
-                var happinessScore = daysSinceLastPet * HappinessModifier;
-                var roundedHappinessScore = Math.Round(happinessScore, ScorePrecision);
-
-                return Math.Min(MaxScore, roundedHappinessScore);
-            }
+            get { return CalculateMetricScore(Action.Pet); }
+            set { _happiness = value; }
         }
 
-        public DateTime LastFeed { get; set; } = DateTime.UtcNow;
+        public DateTime LastFeed { get; set; }
 
-        public DateTime LastPet { get; set; } = DateTime.UtcNow;
+        public DateTime LastPet { get; set; }
+
+        public DateTime Born { get; }
 
         private double HungerModifier
         {
@@ -76,6 +78,37 @@ namespace JakeCleary.PocketMongrels.Core.Entity
                 }
             }
         }
+
+        private double CalculateMetricScore(Action action)
+        {
+            double currentScore;
+            double modifier;
+            DateTime lastInteraction;
+
+            switch (action)
+            {
+                case Action.Feed:
+                    currentScore = _hunger;
+                    lastInteraction = LastFeed;
+                    modifier = HungerModifier;
+                    break;
+                case Action.Pet:
+                    currentScore = _happiness;
+                    lastInteraction = LastPet;
+                    modifier = HappinessModifier;
+                    break;
+                default:
+                    throw new Exception($"Illigal enum value {action}");
+            }
+
+            // Calculate the animal's metric score.
+            var score = (DateTime.UtcNow - lastInteraction).TotalHours;
+            score = score * modifier;
+            score = Math.Round(score, ScorePrecision);
+
+            // Hunger scores go up over time, happiness scores go down.
+            return action == Action.Feed ? (currentScore + score) : (currentScore - score);
+        }
     }
 
     public enum Type
@@ -83,5 +116,11 @@ namespace JakeCleary.PocketMongrels.Core.Entity
         Fast,
         Lazy,
         Smart
-    };
+    }
+
+    public enum Action
+    {
+        Feed,
+        Pet
+    }
 }

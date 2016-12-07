@@ -38,8 +38,9 @@ namespace JakeCleary.PocketMongrels.Api.Controllers
             }
 
             // Feed the animal some tasty treats.
+            animal.Hunger = Animal.MinScore;
             animal.LastFeed = DateTime.UtcNow;
-            
+
             // Return the full animal object back.
             var successResponse = Request.CreateResponse(HttpStatusCode.OK, animal);
             successResponse.Headers.Location = new Uri($"http://localhost:53460/api/users/{userId}/animals/{animalId}");
@@ -65,6 +66,7 @@ namespace JakeCleary.PocketMongrels.Api.Controllers
             }
 
             // Give the animal a cuddle.
+            animal.Happiness = Animal.MaxScore;
             animal.LastPet = DateTime.UtcNow;
 
             // Return the full animal object back.
