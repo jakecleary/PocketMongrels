@@ -24,16 +24,23 @@ namespace JakeCleary.PocketMongrels.Api.Controller
         {
             // Get the animal.
             var user = _userRepository.ByGuid(userId);
+
+            if (user == null)
+            {
+                // Send a 404 response if the user doesn't exist.
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
+                response.Content = new StringContent("User not found.");
+                throw new HttpResponseException(response);
+            }
+
             var animal = user.Animals.FirstOrDefault(a => a.Id == animalId);
 
             if (animal == null)
             {
-                var notFoundResponse = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Animal not found.")
-                };
-
-                throw new HttpResponseException(notFoundResponse);
+                // Send a 404 response if the animal doesn't exist.
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
+                response.Content = new StringContent("Animal not found.");
+                throw new HttpResponseException(response);
             }
 
             // Feed the animal some tasty treats.
@@ -54,16 +61,23 @@ namespace JakeCleary.PocketMongrels.Api.Controller
         {
             // Get the animal.
             var user = _userRepository.ByGuid(userId);
+
+            if (user == null)
+            {
+                // Send a 404 response if the user doesn't exist.
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
+                response.Content = new StringContent("User not found.");
+                throw new HttpResponseException(response);
+            }
+
             var animal = user.Animals.FirstOrDefault(a => a.Id == animalId);
 
             if (animal == null)
             {
-                var notFoundResponse = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Animal not found.")
-                };
-
-                throw new HttpResponseException(notFoundResponse);
+                // Send a 404 response if the animal doesn't exist.
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
+                response.Content = new StringContent("Animal not found.");
+                throw new HttpResponseException(response);
             }
 
             // Give the animal a cuddle.
