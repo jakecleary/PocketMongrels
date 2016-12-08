@@ -72,11 +72,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JakeCleary.PocketMongrels.Messages\JakeCleary.PocketMongrels.Api.Resources.csproj">
+    <ProjectReference Include="..\JakeCleary.PocketMongrels.Api.Resources\JakeCleary.PocketMongrels.Api.Resources.csproj">
       <Project>{fb362363-d18b-445b-ac04-4504a2b78ff7}</Project>
       <Name>JakeCleary.PocketMongrels.Api.Resources</Name>
     </ProjectReference>
-    <ProjectReference Include="..\JakeCleary.PocketMongrels.Server\JakeCleary.PocketMongrels.Api.csproj">
+    <ProjectReference Include="..\JakeCleary.PocketMongrels.Api\JakeCleary.PocketMongrels.Api.csproj">
       <Project>{c537c259-09d0-45fb-8272-8d3f80005e16}</Project>
       <Name>JakeCleary.PocketMongrels.Api</Name>
     </ProjectReference>

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using JakeCleary.PocketMongrels.Core;
-using JakeCleary.PocketMongrels.Core.Entity;
 
 namespace JakeCleary.PocketMongrels.Api.Resourses
 {
@@ -22,7 +15,7 @@ namespace JakeCleary.PocketMongrels.Api.Resourses
 
         public static Animal From(Core.Entity.Animal animal)
         {
-            return new Animal()
+            return new Animal
             {
                 Id = animal.Id,
                 Name = animal.Name,

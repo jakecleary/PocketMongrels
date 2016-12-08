@@ -12,11 +12,11 @@ namespace JakeCleary.PocketMongrels.Api.Resourses
 
         public static User From(Core.Entity.User user)
         {
-            return new User()
+            return new User
             {
                 Id = user.Id,
                 Name = user.Name,
-                Animals = user.Animals.Select(a => Animal.From(a)).ToList()
+                Animals = user.Animals.Select(Animal.From).ToList()
             };
         }
     }

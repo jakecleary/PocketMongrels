@@ -3,7 +3,6 @@ using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using JakeCleary.PocketMongrels.Api;
-using JakeCleary.PocketMongrels.Core.Entity;
 using JakeCleary.PocketMongrels.Data;
 using JakeCleary.PocketMongrels.Data.InMemory;
 using Microsoft.Owin;
@@ -18,14 +17,20 @@ namespace JakeCleary.PocketMongrels.Api
         public void Configuration(IAppBuilder app)
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<Repository<User>>().As<IRepository<User>>().SingleInstance();
-            builder.RegisterType<Repository<Animal>>().As<IRepository<Animal>>().SingleInstance();
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-            var lifetimeScope = builder.Build();
 
+            // Register controllers.
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            // Register repositories.
+            builder.RegisterType<UserRepository>().As<IUserRepository>().SingleInstance();
+            builder.RegisterType<AnimalRepository>().As<IAnimalRepository>().SingleInstance();
+            
+            var lifetimeScope = builder.Build();
             var config = new HttpConfiguration();
+
             config.MapHttpAttributeRoutes();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(lifetimeScope);
+
             app.UseAutofacMiddleware(lifetimeScope);
             app.UseAutofacWebApi(config);
             app.UseWebApi(config);

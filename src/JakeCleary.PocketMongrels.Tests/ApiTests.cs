@@ -35,9 +35,17 @@ namespace JakeCleary.PocketMongrels.ApiTests
             HttpRequestMessage newUserRequest;
             HttpResponseMessage newUserResponse;
 
-            // And check that they're created properly.
+            // ...check that they're created properly...
             HttpRequestMessage getUserRequest;
             HttpResponseMessage getUserResponse;
+
+            // ...create them an animal...
+            HttpRequestMessage createAnimalRequest;
+            HttpResponseMessage createAnimalResponse;
+
+            // ...and check the animal was created properly.
+            HttpRequestMessage getAnimalRequest;
+            HttpResponseMessage getAnimalResponse;
 
             // Build the request.
             newUserRequest = new HttpRequestMessage(HttpMethod.Post, "/api/users");
@@ -65,6 +73,13 @@ namespace JakeCleary.PocketMongrels.ApiTests
             Assert.That(user.Id, Is.EqualTo(newUser.Id));
             Assert.That(user.Name, Is.EqualTo("Jake"));
             Assert.That(user.Animals, Is.Empty);
+
+            // Request to create a Fast rabbit called Snuffles.
+//            createAnimalRequest = new HttpRequestMessage(HttpMethod.Post, $"api/users/{user.Id}/animals");
+//            createAnimalRequest.Content = new StringContent("{'Name': 'Snuffles the Rabbit', 'Type': 0}");
+//            createAnimalResponse = _server.HttpClient.SendAsync(createAnimalRequest).Result;
+
+
         }
     }
 }

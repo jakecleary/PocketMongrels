@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAnimalRepository.cs" />
+    <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JakeCleary.PocketMongrels.Core\JakeCleary.PocketMongrels.Core.csproj">

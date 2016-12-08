@@ -12,9 +12,9 @@ namespace JakeCleary.PocketMongrels.Api.Controller
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
-        private readonly IRepository<Core.Entity.User> _userRepository;
+        private readonly IUserRepository _userRepository;
 
-        public UsersController(IRepository<Core.Entity.User> userRepository)
+        public UsersController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
@@ -36,8 +36,11 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             if (user == null)
             {
                 // Send a 404 response if the user doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
-                response.Content = new StringContent("User not found.");
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent("User not found.")
+                };
+
                 throw new HttpResponseException(response);
             }
 
@@ -66,8 +69,11 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             if (user == null)
             {
                 // Send a 404 response if the user doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
-                response.Content = new StringContent("User not found.");
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent("User not found.")
+                };
+
                 throw new HttpResponseException(response);
             }
 

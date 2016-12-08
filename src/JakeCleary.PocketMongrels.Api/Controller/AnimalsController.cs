@@ -12,13 +12,11 @@ namespace JakeCleary.PocketMongrels.Api.Controller
     [RoutePrefix("api/users/{userId:guid}/animals")]
     public class AnimalsController : ApiController
     {
-        private readonly IRepository<User> _userRepository;
-        private readonly IRepository<Animal> _animalRepository;
+        private readonly IUserRepository _userRepository;
 
-        public AnimalsController(IRepository<User> userRepository, IRepository<Animal> animalRepository)
+        public AnimalsController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
-            _animalRepository = animalRepository;
         }
 
         [HttpGet]
@@ -40,8 +38,11 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             if (user == null)
             {
                 // Send a 404 response if the user doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
-                response.Content = new StringContent("User not found.");
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent("User not found.")
+                };
+
                 throw new HttpResponseException(response);
             }
 
@@ -51,8 +52,11 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             if (animal == null)
             {
                 // Send a 404 response if the animal doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
-                response.Content = new StringContent("Animal not found.");
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent("Animal not found.")
+                };
+
                 throw new HttpResponseException(response);
             }
 
@@ -78,8 +82,11 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             if (user == null)
             {
                 // Send a 404 response if the user doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
-                response.Content = new StringContent("User not found.");
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent("User not found.")
+                };
+
                 throw new HttpResponseException(response);
             }
 
@@ -89,8 +96,11 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             if (animal == null)
             {
                 // Send a 404 response if the animal doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound);
-                response.Content = new StringContent("Animal not found.");
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent("Animal not found.")
+                };
+
                 throw new HttpResponseException(response);
             }
 
