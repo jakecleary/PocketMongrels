@@ -4,11 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Core.Entity;
-using JakeCleary.PocketMongrels.Data.Repository;
+using JakeCleary.PocketMongrels.Data;
 
-namespace JakeCleary.PocketMongrels.Api.Controllers
+namespace JakeCleary.PocketMongrels.Api.Controller
 {
     [RoutePrefix("api/users/{userId:guid}/animals")]
     public class AnimalsController : ApiController
@@ -49,7 +48,7 @@ namespace JakeCleary.PocketMongrels.Api.Controllers
             }
 
             // Search the user's list of animals for one with a matching guid.
-            var animal = user.Animals.FirstOrDefault(a => a.Guid == animalId);
+            var animal = user.Animals.FirstOrDefault(a => a.Id == animalId);
 
             if (animal == null)
             {
@@ -91,7 +90,7 @@ namespace JakeCleary.PocketMongrels.Api.Controllers
             }
 
             // Search the user's list of animals for one with a matching guid.
-            var animal = user.Animals.FirstOrDefault(a => a.Guid == animalId);
+            var animal = user.Animals.FirstOrDefault(a => a.Id == animalId);
 
             if (animal == null)
             {

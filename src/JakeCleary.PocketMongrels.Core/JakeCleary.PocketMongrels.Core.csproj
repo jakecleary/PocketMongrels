@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB362363-D18B-445B-AC04-4504A2B78FF7}</ProjectGuid>
+    <ProjectGuid>{0BC1D44A-FBAE-47E2-A238-AB335842B834}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JakeCleary.PocketMongrels.Contracts</RootNamespace>
-    <AssemblyName>JakeCleary.PocketMongrels.Contracts</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>JakeCleary.PocketMongrels.Core</RootNamespace>
+    <AssemblyName>JakeCleary.PocketMongrels.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UserResponse.cs" />
+    <Compile Include="Entity\Animal.cs" />
+    <Compile Include="Entity\IGloballyUniqueEntity.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

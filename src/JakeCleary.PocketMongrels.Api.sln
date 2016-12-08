@@ -7,13 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Data", "JakeCleary.PocketMongrels.Data\JakeCleary.PocketMongrels.Data.csproj", "{8DDDA771-726D-48DD-91AA-5AD5A44681D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Server", "JakeCleary.PocketMongrels.Server\JakeCleary.PocketMongrels.Server.csproj", "{C537C259-09D0-45FB-8272-8D3F80005E16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Api", "JakeCleary.PocketMongrels.Api\JakeCleary.PocketMongrels.Api.csproj", "{C537C259-09D0-45FB-8272-8D3F80005E16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Data.InMemory", "JakeCleary.PocketMongrels.Data.InMemory\JakeCleary.PocketMongrels.Data.InMemory.csproj", "{3CA9D871-EC95-4E98-8020-2B156F7DADB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests", "JakeCleary.PocketMongrels.Tests\JakeCleary.PocketMongrels.Tests.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Messages", "JakeCleary.PocketMongrels.Messages\JakeCleary.PocketMongrels.Messages.csproj", "{FB362363-D18B-445B-AC04-4504A2B78FF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Api.Resources", "JakeCleary.PocketMongrels.Api.Resources\JakeCleary.PocketMongrels.Api.Resources.csproj", "{FB362363-D18B-445B-AC04-4504A2B78FF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

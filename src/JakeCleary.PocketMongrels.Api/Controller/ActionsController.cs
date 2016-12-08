@@ -6,7 +6,7 @@ using System.Web.Http;
 using JakeCleary.PocketMongrels.Core.Entity;
 using JakeCleary.PocketMongrels.Data;
 
-namespace JakeCleary.PocketMongrels.Server.Controller
+namespace JakeCleary.PocketMongrels.Api.Controller
 {
     [RoutePrefix("api/users/{userId:guid}/animals/{animalId:guid}")]
     public class ActionsController : ApiController

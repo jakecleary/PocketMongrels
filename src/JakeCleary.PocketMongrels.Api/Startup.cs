@@ -2,16 +2,16 @@
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
+using JakeCleary.PocketMongrels.Api;
 using JakeCleary.PocketMongrels.Core.Entity;
 using JakeCleary.PocketMongrels.Data;
 using JakeCleary.PocketMongrels.Data.InMemory;
-using JakeCleary.PocketMongrels.Server;
 using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartup(typeof(Startup))]
 
-namespace JakeCleary.PocketMongrels.Server
+namespace JakeCleary.PocketMongrels.Api
 {
     public partial class Startup
     {
