@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using JakeCleary.PocketMongrels.Messages;
 using JakeCleary.PocketMongrels.Core.Entity;
-using JakeCleary.PocketMongrels.Data.Repository;
+using JakeCleary.PocketMongrels.Data;
 
-namespace JakeCleary.PocketMongrels.Api.Controllers
+namespace JakeCleary.PocketMongrels.Server.Controller
 {
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
@@ -19,9 +20,22 @@ namespace JakeCleary.PocketMongrels.Api.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<User> Get()
+        [Route("")]
+        public IHttpActionResult Get()
         {
-            return _userRepository.All();
+            var users = _userRepository.All();
+
+            var x = new List<UserResponse>();
+            foreach (var user in users)
+            {
+                x.Add(new UserResponse
+                {
+                    UserId = user.Id,
+                    Name = user.Name
+                });
+            }
+
+            return Ok(x);
         }
 
         [HttpGet]

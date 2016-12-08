@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Api", "JakeCleary.PocketMongrels.Api\JakeCleary.PocketMongrels.Api.csproj", "{AA0474A1-6B37-4B24-8EFF-4FEB1899F556}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests", "JakeCleary.PocketMongrels.Tests\JakeCleary.PocketMongrels.Tests.csproj", "{17EF3B8C-D3F1-48EC-BFB4-203B92C382B6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Core", "JakeCleary.PocketMongrels.Core\JakeCleary.PocketMongrels.Core.csproj", "{0BC1D44A-FBAE-47E2-A238-AB335842B834}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Data", "JakeCleary.PocketMongrels.Data\JakeCleary.PocketMongrels.Data.csproj", "{8DDDA771-726D-48DD-91AA-5AD5A44681D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Server", "JakeCleary.PocketMongrels.Server\JakeCleary.PocketMongrels.Server.csproj", "{C537C259-09D0-45FB-8272-8D3F80005E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Data.InMemory", "JakeCleary.PocketMongrels.Data.InMemory\JakeCleary.PocketMongrels.Data.InMemory.csproj", "{3CA9D871-EC95-4E98-8020-2B156F7DADB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests", "JakeCleary.PocketMongrels.Tests\JakeCleary.PocketMongrels.Tests.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Messages", "JakeCleary.PocketMongrels.Messages\JakeCleary.PocketMongrels.Messages.csproj", "{FB362363-D18B-445B-AC04-4504A2B78FF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA0474A1-6B37-4B24-8EFF-4FEB1899F556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA0474A1-6B37-4B24-8EFF-4FEB1899F556}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA0474A1-6B37-4B24-8EFF-4FEB1899F556}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA0474A1-6B37-4B24-8EFF-4FEB1899F556}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17EF3B8C-D3F1-48EC-BFB4-203B92C382B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17EF3B8C-D3F1-48EC-BFB4-203B92C382B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17EF3B8C-D3F1-48EC-BFB4-203B92C382B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17EF3B8C-D3F1-48EC-BFB4-203B92C382B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0BC1D44A-FBAE-47E2-A238-AB335842B834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0BC1D44A-FBAE-47E2-A238-AB335842B834}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BC1D44A-FBAE-47E2-A238-AB335842B834}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,22 @@ Global
 		{8DDDA771-726D-48DD-91AA-5AD5A44681D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DDDA771-726D-48DD-91AA-5AD5A44681D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DDDA771-726D-48DD-91AA-5AD5A44681D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C537C259-09D0-45FB-8272-8D3F80005E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C537C259-09D0-45FB-8272-8D3F80005E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C537C259-09D0-45FB-8272-8D3F80005E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C537C259-09D0-45FB-8272-8D3F80005E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA9D871-EC95-4E98-8020-2B156F7DADB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA9D871-EC95-4E98-8020-2B156F7DADB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA9D871-EC95-4E98-8020-2B156F7DADB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA9D871-EC95-4E98-8020-2B156F7DADB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB362363-D18B-445B-AC04-4504A2B78FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB362363-D18B-445B-AC04-4504A2B78FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB362363-D18B-445B-AC04-4504A2B78FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB362363-D18B-445B-AC04-4504A2B78FF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

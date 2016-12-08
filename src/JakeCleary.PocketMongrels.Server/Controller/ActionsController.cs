@@ -3,11 +3,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Core.Entity;
-using JakeCleary.PocketMongrels.Data.Repository;
+using JakeCleary.PocketMongrels.Data;
 
-namespace JakeCleary.PocketMongrels.Api.Controllers
+namespace JakeCleary.PocketMongrels.Server.Controller
 {
     [RoutePrefix("api/users/{userId:guid}/animals/{animalId:guid}")]
     public class ActionsController : ApiController
@@ -18,14 +17,14 @@ namespace JakeCleary.PocketMongrels.Api.Controllers
         {
             _userRepository = userRepository;
         }
-
+        
         [HttpPost]
         [Route("feed")]
         public IHttpActionResult Feed([FromUri] Guid userId, [FromUri] Guid animalId)
         {
             // Get the animal.
             var user = _userRepository.ByGuid(userId);
-            var animal = user.Animals.FirstOrDefault(a => a.Guid == animalId);
+            var animal = user.Animals.FirstOrDefault(a => a.Id == animalId);
 
             if (animal == null)
             {
@@ -55,7 +54,7 @@ namespace JakeCleary.PocketMongrels.Api.Controllers
         {
             // Get the animal.
             var user = _userRepository.ByGuid(userId);
-            var animal = user.Animals.FirstOrDefault(a => a.Guid == animalId);
+            var animal = user.Animals.FirstOrDefault(a => a.Id == animalId);
 
             if (animal == null)
             {

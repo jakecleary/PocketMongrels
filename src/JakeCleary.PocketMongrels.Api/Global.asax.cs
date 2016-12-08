@@ -5,6 +5,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.WebApi;
 using JakeCleary.PocketMongrels.Api.Controllers;
+using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Core.Entity;
 using JakeCleary.PocketMongrels.Data.Repository;
 
