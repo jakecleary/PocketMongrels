@@ -21,7 +21,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
 
         [HttpGet]
         [Route("")]
-        public IEnumerable<Core.Entity.User> Get()
+        public IEnumerable<Core.User> Get()
         {
             return _userRepository.All();
         }
@@ -50,7 +50,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
 
         [HttpPost]
         [Route("")]
-        public CreatedNegotiatedContentResult<User> Post([FromBody]Core.Entity.User user)
+        public CreatedNegotiatedContentResult<User> Post([FromBody]Core.User user)
         {
             // Store the user.
             _userRepository.Add(user);

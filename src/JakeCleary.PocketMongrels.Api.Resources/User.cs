@@ -10,7 +10,7 @@ namespace JakeCleary.PocketMongrels.Api.Resourses
         public string Name { get; set; }
         public List<Animal> Animals { get; set; } = new List<Animal>();
 
-        public static User From(Core.Entity.User user)
+        public static User From(Core.User user)
         {
             return new User
             {

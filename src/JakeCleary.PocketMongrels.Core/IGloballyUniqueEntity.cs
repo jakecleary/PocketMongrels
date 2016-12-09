@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace JakeCleary.PocketMongrels.Core.Entity
+namespace JakeCleary.PocketMongrels.Core
 {
     public interface IGloballyUniqueEntity
     {

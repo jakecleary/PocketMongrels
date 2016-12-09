@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JakeCleary.PocketMongrels.Core.Entity
+namespace JakeCleary.PocketMongrels.Core
 {
     public class User : IGloballyUniqueEntity
     {
