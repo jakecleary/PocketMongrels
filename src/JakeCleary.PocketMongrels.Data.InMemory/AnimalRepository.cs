@@ -7,7 +7,7 @@ namespace JakeCleary.PocketMongrels.Data.InMemory
 {
     public class AnimalRepository : IAnimalRepository
     {
-        private List<Animal> _animals;
+        private readonly List<Animal> _animals = new List<Animal>();
 
         public List<Animal> All()
         {
