@@ -31,55 +31,64 @@ namespace JakeCleary.PocketMongrels.ApiTests
         [Test]
         public void TestCreateNewUser()
         {
-            // We're going to create a new user...
-            HttpRequestMessage newUserRequest;
-            HttpResponseMessage newUserResponse;
+            ///////
+            // User
+            ///////
 
-            // ...check that they're created properly...
-            HttpRequestMessage getUserRequest;
-            HttpResponseMessage getUserResponse;
-
-            // ...create them an animal...
-            HttpRequestMessage createAnimalRequest;
-            HttpResponseMessage createAnimalResponse;
-
-            // ...and check the animal was created properly.
-            HttpRequestMessage getAnimalRequest;
-            HttpResponseMessage getAnimalResponse;
-
-            // Build the request.
-            newUserRequest = new HttpRequestMessage(HttpMethod.Post, "/api/users");
+            // Create a new user...
+            var newUserRequest = new HttpRequestMessage(HttpMethod.Post, "/api/users");
             newUserRequest.Content = new StringContent("{'Name': 'Jake'}", Encoding.UTF8, "application/json");
-
-            // Send the request and store it's response.
-            newUserResponse = _server.HttpClient.SendAsync(newUserRequest).Result;
+            var newUserResponse = _server.HttpClient.SendAsync(newUserRequest).Result;
 
             // Get the location header and body.
             var location = newUserResponse.Headers.Location.ToString();
             var newUser = newUserResponse.Content.ReadAsAsync<User>().Result;
 
-            // Check it worked.
+            // ...check that they're created properly.
             Assert.That(newUserResponse.StatusCode, Is.EqualTo(HttpStatusCode.Created));
             Assert.That(location, Is.StringMatching($"/api/users/{newUser.Id}"));
             Assert.That(newUser.Name, Is.EqualTo("Jake"));
 
-            // Fetch the newly created User resourse.
-            getUserRequest = new HttpRequestMessage(HttpMethod.Get, location);
-            getUserResponse = _server.HttpClient.SendAsync(getUserRequest).Result;
+            // Fetch the newly created User resource...
+            var getUserRequest = new HttpRequestMessage(HttpMethod.Get, location);
+            var getUserResponse = _server.HttpClient.SendAsync(getUserRequest).Result;
             var user = getUserResponse.Content.ReadAsAsync<User>().Result;
 
-            // Make sure the user's details are correct, including having no animals.
+            // ... and make sure the user's details are correct.
             Assert.That(getUserResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             Assert.That(user.Id, Is.EqualTo(newUser.Id));
             Assert.That(user.Name, Is.EqualTo("Jake"));
             Assert.That(user.Animals, Is.Empty);
 
-            // Request to create a Fast rabbit called Snuffles.
-//            createAnimalRequest = new HttpRequestMessage(HttpMethod.Post, $"api/users/{user.Id}/animals");
-//            createAnimalRequest.Content = new StringContent("{'Name': 'Snuffles the Rabbit', 'Type': 0}");
-//            createAnimalResponse = _server.HttpClient.SendAsync(createAnimalRequest).Result;
+            /////////
+            // Animal
+            /////////
 
+            // Create a 'Fast' rabbit called Snuffles.
+            var jsonPayload = "{'Name': 'Snuffles the Rabbit', 'Type': 0}";
+            var createAnimalRequest = new HttpRequestMessage(HttpMethod.Post, $"/api/users/{user.Id}/animals");
+            createAnimalRequest.Content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+            var createAnimalResponse = _server.HttpClient.SendAsync(createAnimalRequest).Result;
 
+            // Get the location header and body.
+            var newAnimal = createAnimalResponse.Content.ReadAsAsync<Animal>().Result;
+            var newAnimalLocation = createAnimalResponse.Headers.Location.ToString();
+
+            Assert.That(createAnimalResponse.StatusCode, Is.EqualTo(HttpStatusCode.Created));
+            Assert.That(newAnimalLocation, Is.StringMatching($"/api/users/{user.Id}/animals/{newAnimal.Id}"));
+            Assert.That(newAnimal.Name, Is.EqualTo("Snuffles the Rabbit"));
+            Assert.That(newAnimal.Type, Is.EqualTo(0));
+
+            // Fetch the newly created Animal resource...
+            var getAnimalRequest = new HttpRequestMessage(HttpMethod.Get, newAnimalLocation);
+            var getAnimalResponse = _server.HttpClient.SendAsync(getAnimalRequest).Result;
+            var animal = getAnimalResponse.Content.ReadAsAsync<Animal>().Result;
+
+            // ...and make sure the details are correct.
+            Assert.That(getAnimalResponse.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+            Assert.That(animal.Id, Is.EqualTo(newAnimal.Id));
+            Assert.That(animal.Name, Is.EqualTo("Snuffles the Rabbit"));
+            Assert.That(animal.Type, Is.EqualTo(0));
         }
     }
 }

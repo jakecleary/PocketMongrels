@@ -65,11 +65,16 @@ namespace JakeCleary.PocketMongrels.Api.Controller
 
         [HttpPost]
         [Route("")]
-        public void Post([FromUri]Guid userId, [FromBody]Animal animal)
+        public IHttpActionResult Create([FromUri]Guid userId, [FromBody]Animal animal)
         {
             var user = _userRepository.ByGuid(userId);
 
             user.Animals.Add(animal);
+
+            var location = $"http://localhost/api/users/{user.Id}/animals/{animal.Id}";
+            var resourse = Resourses.Animal.From(animal);
+
+            return Created(location, resourse);
         }
 
         [HttpDelete]
