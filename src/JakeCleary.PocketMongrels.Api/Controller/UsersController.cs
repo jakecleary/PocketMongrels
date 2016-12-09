@@ -8,12 +8,10 @@ namespace JakeCleary.PocketMongrels.Api.Controller
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
-        private readonly IUserRepository _userRepository;
         private readonly UserService _userService;
 
-        public UsersController(IUserRepository userRepository, UserService userService)
+        public UsersController(UserService userService)
         {
-            _userRepository = userRepository;
             _userService = userService;
         }
 
@@ -45,7 +43,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
         [Route("")]
         public IHttpActionResult Post([FromBody]Core.User user)
         {
-            _userRepository.Add(user);
+            _userService.Add(user);
 
             var url = $"http://localhost/api/users/{user.Id}";
             var resource = Resourses.User.From(user);
@@ -64,7 +62,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
                 return NotFound();
             }
 
-            _userRepository.Remove(user);
+            _userService.Remove(user);
 
             return Ok();
         }
