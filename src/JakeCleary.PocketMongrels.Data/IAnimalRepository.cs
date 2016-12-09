@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using JakeCleary.PocketMongrels.Core.Entity;
+using JakeCleary.PocketMongrels.Core;
 
 namespace JakeCleary.PocketMongrels.Data
 {

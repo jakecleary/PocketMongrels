@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using JakeCleary.PocketMongrels.Core.Entity;
+using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Data;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
