@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Results;
 using JakeCleary.PocketMongrels.Data;
-using JakeCleary.PocketMongrels.Api.Resourses;
+using JakeCleary.PocketMongrels.Services;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
 {
@@ -13,72 +9,64 @@ namespace JakeCleary.PocketMongrels.Api.Controller
     public class UsersController : ApiController
     {
         private readonly IUserRepository _userRepository;
+        private readonly UserService _userService;
 
-        public UsersController(IUserRepository userRepository)
+        public UsersController(IUserRepository userRepository, UserService userService)
         {
             _userRepository = userRepository;
+            _userService = userService;
         }
 
         [HttpGet]
         [Route("")]
-        public IEnumerable<Core.User> Get()
+        public IHttpActionResult Get()
         {
-            return _userRepository.All();
+            var users = _userService.All();
+            users.ForEach(u => Resourses.User.From(u));
+
+            return Ok(users);
         }
 
         [HttpGet]
         [Route("{id:guid}")]
-        public User Get(Guid id)
+        public IHttpActionResult Get(Guid id)
         {
-            // Find the user.
-            var user = _userRepository.ByGuid(id);
+            var user = _userService.FindById(id);
 
             if (user == null)
             {
-                // Send a 404 response if the user doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("User not found.")
-                };
-
-                throw new HttpResponseException(response);
+                return NotFound();
             }
 
-            // Return the user as an API resource.
-            return Resourses.User.From(user);
+            return Ok(Resourses.User.From(user));
         }
 
         [HttpPost]
         [Route("")]
-        public CreatedNegotiatedContentResult<User> Post([FromBody]Core.User user)
+        public IHttpActionResult Post([FromBody]Core.User user)
         {
-            // Store the user.
             _userRepository.Add(user);
 
-            // Send back the new API resourse, with a pointer to where it is located.
-            return Created($"/api/users/{user.Id}", Resourses.User.From(user));
+            var url = $"http://localhost/api/users/{user.Id}";
+            var resource = Resourses.User.From(user);
+
+            return Created(url, resource);
         }
 
         [HttpDelete]
         [Route("{id:guid}")]
-        public void Delete(Guid id)
+        public IHttpActionResult Delete(Guid id)
         {
-            // Find the user.
-            var user =_userRepository.ByGuid(id);
+            var user = _userService.FindById(id);
 
             if (user == null)
             {
-                // Send a 404 response if the user doesn't exist.
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("User not found.")
-                };
-
-                throw new HttpResponseException(response);
+                return NotFound();
             }
 
-            // Delete the user.
             _userRepository.Remove(user);
+
+            return Ok();
         }
     }
 }
