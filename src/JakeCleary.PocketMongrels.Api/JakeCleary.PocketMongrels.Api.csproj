@@ -108,6 +108,10 @@
       <Project>{fb362363-d18b-445b-ac04-4504a2b78ff7}</Project>
       <Name>JakeCleary.PocketMongrels.Api.Resources</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JakeCleary.PocketMongrels.Services\JakeCleary.PocketMongrels.Services.csproj">
+      <Project>{a2d30653-1d55-4f5d-9fc6-5f65a50a7c56}</Project>
+      <Name>JakeCleary.PocketMongrels.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
