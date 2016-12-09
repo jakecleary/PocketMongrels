@@ -5,6 +5,7 @@ using Autofac.Integration.WebApi;
 using JakeCleary.PocketMongrels.Api;
 using JakeCleary.PocketMongrels.Data;
 using JakeCleary.PocketMongrels.Data.InMemory;
+using JakeCleary.PocketMongrels.Services;
 using Microsoft.Owin;
 using Owin;
 
@@ -20,6 +21,9 @@ namespace JakeCleary.PocketMongrels.Api
 
             // Register controllers.
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+
+            // Register services.
+            builder.RegisterType<UserService>().SingleInstance();
 
             // Register repositories.
             builder.RegisterType<UserRepository>().As<IUserRepository>().SingleInstance();
