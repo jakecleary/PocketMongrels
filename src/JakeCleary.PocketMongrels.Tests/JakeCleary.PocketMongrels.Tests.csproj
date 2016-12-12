@@ -64,8 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GivenANewUser\WhenCreatingAMalformedUser.cs" />
-    <Compile Include="GivenANewUser\WhenCreatingTheUser.cs" />
+    <Compile Include="GivenIWantToCreateAnAccount\WhenIUseInvalidData.cs" />
+    <Compile Include="GivenIWantToCreateAnAccount\WhenUsingValidData.cs" />
     <Compile Include="FakeServer.cs" />
     <Compile Include="GivenAUserWantsANewPet\WhenCreatingThePet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

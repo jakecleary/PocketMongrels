@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
-namespace JakeCleary.PocketMongrels.Tests.GivenAUserWantsANewPet
+namespace JakeCleary.PocketMongrels.Tests.GivenIWantANewPet
 {
     class WhenCreatingThePet
     {

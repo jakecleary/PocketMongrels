@@ -3,10 +3,10 @@ using System.Net;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
-namespace JakeCleary.PocketMongrels.Tests.GivenANewUser
+namespace JakeCleary.PocketMongrels.Tests.GivenIWantToCreateAnAccount
 {
     [TestFixture]
-    public class WhenCreatingTheUser
+    public class WhenIUseValidData
     {
         private FakeServer _server;
         private ApiResponse<User> _response;
