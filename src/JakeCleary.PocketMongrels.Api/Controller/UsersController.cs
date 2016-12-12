@@ -32,9 +32,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             var user = _userService.FindById(id);
 
             if (user == null)
-            {
                 return NotFound();
-            }
 
             return Ok(Resourses.User.From(user));
         }
@@ -59,9 +57,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             var user = _userService.FindById(id);
 
             if (user == null)
-            {
                 return NotFound();
-            }
 
             _userService.Remove(user);
 
