@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Http;
-using JakeCleary.PocketMongrels.Data;
+using JakeCleary.PocketMongrels.Api.Filter;
 using JakeCleary.PocketMongrels.Services;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
@@ -41,6 +41,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
 
         [HttpPost]
         [Route("")]
+        [ValidateModel]
         public IHttpActionResult Post([FromBody]Core.User user)
         {
             _userService.Add(user);

@@ -84,6 +84,7 @@
     <Compile Include="Controller\ActionsController.cs" />
     <Compile Include="Controller\AnimalsController.cs" />
     <Compile Include="Controller\UsersController.cs" />
+    <Compile Include="Filter\ModelValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

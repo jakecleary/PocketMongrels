@@ -3,6 +3,7 @@ using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using JakeCleary.PocketMongrels.Api;
+using JakeCleary.PocketMongrels.Api.Filter;
 using JakeCleary.PocketMongrels.Data;
 using JakeCleary.PocketMongrels.Data.InMemory;
 using JakeCleary.PocketMongrels.Services;
@@ -35,9 +36,17 @@ namespace JakeCleary.PocketMongrels.Api
             config.MapHttpAttributeRoutes();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(lifetimeScope);
 
+            // Register any filters.
+            Filters(config);
+
             app.UseAutofacMiddleware(lifetimeScope);
             app.UseAutofacWebApi(config);
             app.UseWebApi(config);
+        }
+
+        public void Filters(HttpConfiguration config)
+        {
+            config.Filters.Add(new ValidateModelAttribute());
         }
     }
 }
