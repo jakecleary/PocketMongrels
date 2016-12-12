@@ -67,6 +67,7 @@
     <Compile Include="GivenANewUser\WhenCreatingAMalformedUser.cs" />
     <Compile Include="GivenANewUser\WhenCreatingTheUser.cs" />
     <Compile Include="FakeServer.cs" />
+    <Compile Include="GivenAUserWantsANewPet\WhenCreatingThePet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
