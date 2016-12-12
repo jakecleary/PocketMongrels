@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace JakeCleary.PocketMongrels.Tests.GivenIWantToCreateAnAccount
 {
     [TestFixture]
-    public class WhenIUseValidData
+    public class WhenIUseValidUserData
     {
         private FakeServer _server;
         private ApiResponse<User> _response;

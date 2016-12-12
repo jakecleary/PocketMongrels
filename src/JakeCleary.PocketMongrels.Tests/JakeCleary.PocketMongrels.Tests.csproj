@@ -64,10 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GivenIWantToCreateAnAccount\WhenIUseInvalidData.cs" />
-    <Compile Include="GivenIWantToCreateAnAccount\WhenUsingValidData.cs" />
+    <Compile Include="GivenIWantToCreateAnAccount\WhenIUseInvalidUserData.cs" />
+    <Compile Include="GivenIWantToCreateAnAccount\WhenIUseValidUserData.cs" />
     <Compile Include="FakeServer.cs" />
-    <Compile Include="GivenAUserWantsANewPet\WhenCreatingThePet.cs" />
+    <Compile Include="GivenIWantANewPet\WhenIUseValidPetData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

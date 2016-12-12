@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace JakeCleary.PocketMongrels.Tests.GivenIWantANewPet
 {
-    class WhenCreatingThePet
+    class WhenIUseValidPetData
     {
         private FakeServer _server;
         private Guid _ownerId;
