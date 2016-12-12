@@ -7,8 +7,8 @@
     <ProjectGuid>{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JakeCleary.PocketMongrels.ApiTests</RootNamespace>
-    <AssemblyName>JakeCleary.PocketMongrels.ApiTests</AssemblyName>
+    <RootNamespace>JakeCleary.PocketMongrels.Tests</RootNamespace>
+    <AssemblyName>JakeCleary.PocketMongrels.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -64,7 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiTests.cs" />
+    <Compile Include="GivenANewUser\WhenCreatingAMalformedUser.cs" />
+    <Compile Include="GivenANewUser\WhenCreatingTheUser.cs" />
+    <Compile Include="FakeServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
