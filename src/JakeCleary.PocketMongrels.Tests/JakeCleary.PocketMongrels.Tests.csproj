@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiResponse.cs" />
     <Compile Include="GivenIWantANewPet\WhenISpecifyAnInvalidType.cs" />
     <Compile Include="GivenIWantToCreateAnAccount\WhenIUseInvalidUserData.cs" />
     <Compile Include="GivenIWantToCreateAnAccount\WhenIUseValidUserData.cs" />
