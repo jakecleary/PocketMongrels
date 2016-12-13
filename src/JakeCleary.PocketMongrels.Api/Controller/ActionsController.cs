@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Data;
+using JakeCleary.PocketMongrels.Services;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
 {
@@ -12,10 +13,12 @@ namespace JakeCleary.PocketMongrels.Api.Controller
     public class ActionsController : ApiController
     {
         private readonly IUserRepository _userRepository;
+        private readonly AnimalService _animalService;
 
-        public ActionsController(IUserRepository userRepository)
+        public ActionsController(IUserRepository userRepository, AnimalService animalService)
         {
             _userRepository = userRepository;
+            _animalService = animalService;
         }
         
         [HttpPost]
@@ -49,9 +52,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
                 throw new HttpResponseException(response);
             }
 
-            // Feed the animal some tasty treats.
-            animal.Hunger = Animal.MinScore;
-            animal.LastFeed = DateTime.UtcNow;
+            _animalService.Feed(animal);
             
             return Ok(animal);
 
@@ -92,9 +93,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
                 throw new HttpResponseException(response);
             }
 
-            // Give the animal a cuddle.
-            animal.Happiness = Animal.MaxScore;
-            animal.LastPet = DateTime.UtcNow;
+            _animalService.Pet(animal);
 
             // Return the full animal object back.
             var successResponse = Request.CreateResponse(HttpStatusCode.OK, animal);

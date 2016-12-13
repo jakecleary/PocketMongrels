@@ -25,6 +25,7 @@ namespace JakeCleary.PocketMongrels.Api
 
             // Register services.
             builder.RegisterType<UserService>().SingleInstance();
+            builder.RegisterType<AnimalService>().SingleInstance();
 
             // Register repositories.
             builder.RegisterType<UserRepository>().As<IUserRepository>().SingleInstance();
