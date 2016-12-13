@@ -66,10 +66,13 @@
   <ItemGroup>
     <Compile Include="ApiResponse.cs" />
     <Compile Include="GivenIWantANewPet\WhenISpecifyAnInvalidType.cs" />
+    <Compile Include="GivenIWantToFetchMyAccount\WhenIUseAnInvalidIdentifier.cs" />
     <Compile Include="GivenIWantToCreateAnAccount\WhenIUseInvalidUserData.cs" />
     <Compile Include="GivenIWantToCreateAnAccount\WhenIUseValidUserData.cs" />
     <Compile Include="FakeServer.cs" />
     <Compile Include="GivenIWantANewPet\WhenIUseValidPetData.cs" />
+    <Compile Include="GivenIWantToFetchMyAccount\WhenIUseANonExistantId.cs" />
+    <Compile Include="GivenIWantToFetchMyAccount\WhenIUseTheCorrectId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
