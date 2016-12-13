@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
 {
+    [TestFixture]
     class WhenISpecifyAnInvalidType
     {
         private FakeServer _server;
