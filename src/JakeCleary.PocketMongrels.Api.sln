@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Data.InMemory", "JakeCleary.PocketMongrels.Data.InMemory\JakeCleary.PocketMongrels.Data.InMemory.csproj", "{3CA9D871-EC95-4E98-8020-2B156F7DADB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests", "JakeCleary.PocketMongrels.Tests\JakeCleary.PocketMongrels.Tests.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests.Integration", "JakeCleary.PocketMongrels.Tests\JakeCleary.PocketMongrels.Tests.Integration.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Api.Resources", "JakeCleary.PocketMongrels.Api.Resources\JakeCleary.PocketMongrels.Api.Resources.csproj", "{FB362363-D18B-445B-AC04-4504A2B78FF7}"
 EndProject

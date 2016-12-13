@@ -4,7 +4,7 @@ using System.Text;
 using JakeCleary.PocketMongrels.Api;
 using Microsoft.Owin.Testing;
 
-namespace JakeCleary.PocketMongrels.Tests
+namespace JakeCleary.PocketMongrels.Tests.Integration
 {
     class FakeServer
     {

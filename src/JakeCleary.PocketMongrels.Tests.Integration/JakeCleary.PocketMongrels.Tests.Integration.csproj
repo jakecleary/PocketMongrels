@@ -7,8 +7,8 @@
     <ProjectGuid>{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>JakeCleary.PocketMongrels.Tests</RootNamespace>
-    <AssemblyName>JakeCleary.PocketMongrels.Tests</AssemblyName>
+    <RootNamespace>JakeCleary.PocketMongrels.Tests.Integration</RootNamespace>
+    <AssemblyName>JakeCleary.PocketMongrels.Tests.Integration</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

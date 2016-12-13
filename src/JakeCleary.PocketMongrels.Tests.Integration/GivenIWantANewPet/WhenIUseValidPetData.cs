@@ -3,7 +3,7 @@ using System.Net;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
-namespace JakeCleary.PocketMongrels.Tests.GivenIWantANewPet
+namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
 {
     class WhenIUseValidPetData
     {

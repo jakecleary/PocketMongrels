@@ -2,7 +2,7 @@ using System.Net;
 using System.Net.Http;
 using JakeCleary.PocketMongrels.Api.Resourses;
 
-namespace JakeCleary.PocketMongrels.Tests
+namespace JakeCleary.PocketMongrels.Tests.Integration
 {
     public class ApiResponse<T>
     {

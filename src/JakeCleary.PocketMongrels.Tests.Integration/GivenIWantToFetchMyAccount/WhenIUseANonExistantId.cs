@@ -1,11 +1,12 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
-namespace JakeCleary.PocketMongrels.Tests.GivenIWantToFetchMyAccount
+namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToFetchMyAccount
 {
     [TestFixture]
-    class WhenIUseAnInvalidIdentifier
+    class WhenIUseANonExistantId
     {
         private FakeServer _server;
         private ApiResponse<User> _response;
@@ -15,8 +16,11 @@ namespace JakeCleary.PocketMongrels.Tests.GivenIWantToFetchMyAccount
         {
             _server = new FakeServer();
 
+            var id = Guid.NewGuid();
+            var uri = $"/api/users/{id}";
+
             _response = _server
-                .NewRequestTo("/api/users/this-is-not-a-valid-id")
+                .NewRequestTo(uri)
                 .Get<User>();
         }
 

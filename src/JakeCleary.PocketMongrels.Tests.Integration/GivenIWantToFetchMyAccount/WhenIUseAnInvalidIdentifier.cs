@@ -2,10 +2,10 @@
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
-namespace JakeCleary.PocketMongrels.Tests.GivenIWantToCreateAnAccount
+namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToFetchMyAccount
 {
     [TestFixture]
-    public class WhenIUseInvalidUserData
+    class WhenIUseAnInvalidIdentifier
     {
         private FakeServer _server;
         private ApiResponse<User> _response;
@@ -16,8 +16,8 @@ namespace JakeCleary.PocketMongrels.Tests.GivenIWantToCreateAnAccount
             _server = new FakeServer();
 
             _response = _server
-                .NewRequestTo("/api/users")
-                .Post<User>("{'Name': 'UsernameWithTooManyCharacters'}");
+                .NewRequestTo("/api/users/this-is-not-a-valid-id")
+                .Get<User>();
         }
 
         [Test]
@@ -29,13 +29,7 @@ namespace JakeCleary.PocketMongrels.Tests.GivenIWantToCreateAnAccount
         [Test]
         public void ThenTheStatusCodeIsAppropriate()
         {
-            Assert.That(_response.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
-        }
-
-        [Test]
-        public void ThenAHelpfulErrorMessageIsReturned()
-        {
-            Assert.That(_response.Errors.Message, Is.EqualTo("The request is invalid."));
+            Assert.That(_response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
         }
     }
 }
