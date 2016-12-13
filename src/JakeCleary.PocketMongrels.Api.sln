@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests.Integration", "JakeCleary.PocketMongrels.Tests.Integration\JakeCleary.PocketMongrels.Tests.Integration.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Test.Unit", "JakeCleary.PocketMongrels.Test.Unit\JakeCleary.PocketMongrels.Test.Unit.csproj", "{193B69D7-8CB3-4C74-B3F4-4D87513C714B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Test.Unit", "JakeCleary.PocketMongrels.Tests.Unit\JakeCleary.PocketMongrels.Test.Unit.csproj", "{193B69D7-8CB3-4C74-B3F4-4D87513C714B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

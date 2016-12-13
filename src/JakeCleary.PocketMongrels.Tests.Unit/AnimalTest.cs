@@ -2,7 +2,7 @@
 using JakeCleary.PocketMongrels.Core;
 using NUnit.Framework;
 
-namespace JakeCleary.PocketMongrels.Test.Unit
+namespace JakeCleary.PocketMongrels.Tests.Unit
 {
     [TestFixture]
     public class AnimalTest
@@ -20,7 +20,7 @@ namespace JakeCleary.PocketMongrels.Test.Unit
         [Test]
         public void TestAnimalsGetHungry()
         {
-            var animal = new Animal {LastFeed = DateTime.UtcNow.AddHours(-1)};
+            var animal = new Animal { LastFeed = DateTime.UtcNow.AddHours(-1) };
 
             // Animal hunger should increase over time.
             Assert.That(animal.Hunger, Is.GreaterThan(0.5));
@@ -29,7 +29,7 @@ namespace JakeCleary.PocketMongrels.Test.Unit
         [Test]
         public void TestAnimalsGetSad()
         {
-            var animal = new Animal {LastPet = DateTime.UtcNow.AddHours(-1)};
+            var animal = new Animal { LastPet = DateTime.UtcNow.AddHours(-1) };
 
             // Animal hunger should increase over time.
             Assert.That(animal.Happiness, Is.LessThan(0.5));
