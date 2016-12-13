@@ -11,11 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Data.InMemory", "JakeCleary.PocketMongrels.Data.InMemory\JakeCleary.PocketMongrels.Data.InMemory.csproj", "{3CA9D871-EC95-4E98-8020-2B156F7DADB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests.Integration", "JakeCleary.PocketMongrels.Tests\JakeCleary.PocketMongrels.Tests.Integration.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Api.Resources", "JakeCleary.PocketMongrels.Api.Resources\JakeCleary.PocketMongrels.Api.Resources.csproj", "{FB362363-D18B-445B-AC04-4504A2B78FF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Services", "JakeCleary.PocketMongrels.Services\JakeCleary.PocketMongrels.Services.csproj", "{A2D30653-1D55-4F5D-9FC6-5F65A50A7C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests.Integration", "JakeCleary.PocketMongrels.Tests.Integration\JakeCleary.PocketMongrels.Tests.Integration.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Test.Unit", "JakeCleary.PocketMongrels.Test.Unit\JakeCleary.PocketMongrels.Test.Unit.csproj", "{193B69D7-8CB3-4C74-B3F4-4D87513C714B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +41,6 @@ Global
 		{3CA9D871-EC95-4E98-8020-2B156F7DADB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CA9D871-EC95-4E98-8020-2B156F7DADB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CA9D871-EC95-4E98-8020-2B156F7DADB1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB362363-D18B-445B-AC04-4504A2B78FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FB362363-D18B-445B-AC04-4504A2B78FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB362363-D18B-445B-AC04-4504A2B78FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +49,14 @@ Global
 		{A2D30653-1D55-4F5D-9FC6-5F65A50A7C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2D30653-1D55-4F5D-9FC6-5F65A50A7C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2D30653-1D55-4F5D-9FC6-5F65A50A7C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{193B69D7-8CB3-4C74-B3F4-4D87513C714B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{193B69D7-8CB3-4C74-B3F4-4D87513C714B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{193B69D7-8CB3-4C74-B3F4-4D87513C714B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{193B69D7-8CB3-4C74-B3F4-4D87513C714B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

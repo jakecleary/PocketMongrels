@@ -105,8 +105,11 @@ namespace JakeCleary.PocketMongrels.Core
             score = score * modifier;
             score = Math.Round(score, ScorePrecision);
 
-            // Hunger scores go up over time, happiness scores go down.
-            return action == Action.Feed ? (currentScore + score) : (currentScore - score);
+            // Hunger scores go up, happiness scores go down.
+            score = action == Action.Feed ? (currentScore + score) : (currentScore - score);
+
+            // Return the score clamped between 0 & 10.
+            return (Math.Min(Math.Max(score, MinScore), MaxScore));
         }
     }
 
