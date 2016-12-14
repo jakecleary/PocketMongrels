@@ -10,7 +10,7 @@ namespace JakeCleary.PocketMongrels.Core
 
         public Guid Id { get; } = Guid.NewGuid();
         public string Name { get; set; }
-        public Type Type { get; set; }
+        public AnimalType Type { get; set; }
 
         public Animal()
         {
@@ -48,11 +48,11 @@ namespace JakeCleary.PocketMongrels.Core
             {
                 switch (Type)
                 {
-                    case Type.Fast:
+                    case AnimalType.Fast:
                         return 1.5;
-                    case Type.Lazy:
+                    case AnimalType.Lazy:
                         return 0.5;
-                    case Type.Smart:
+                    case AnimalType.Smart:
                         return 1.5;
                     default:
                         return 1.0;
@@ -66,11 +66,11 @@ namespace JakeCleary.PocketMongrels.Core
             {
                 switch (Type)
                 {
-                    case Type.Fast:
+                    case AnimalType.Fast:
                         return 0.5;
-                    case Type.Lazy:
+                    case AnimalType.Lazy:
                         return 1.5;
-                    case Type.Smart:
+                    case AnimalType.Smart:
                         return 1.5;
                     default:
                         return 1.0;
@@ -113,7 +113,7 @@ namespace JakeCleary.PocketMongrels.Core
         }
     }
 
-    public enum Type
+    public enum AnimalType
     {
         Fast,
         Lazy,

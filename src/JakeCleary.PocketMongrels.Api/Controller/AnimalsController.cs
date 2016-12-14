@@ -7,7 +7,6 @@ using System.Runtime.Versioning;
 using System.Web.Http;
 using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Data;
-using Type = JakeCleary.PocketMongrels.Core.Type;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
 {
@@ -59,7 +58,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
             if (user == null)
                 return NotFound();
 
-            if (!Enum.IsDefined(typeof(Type), animal.Type))
+            if (!Enum.IsDefined(typeof(AnimalType), animal.Type))
                 return BadRequest();
 
             user.Animals.Add(animal);
