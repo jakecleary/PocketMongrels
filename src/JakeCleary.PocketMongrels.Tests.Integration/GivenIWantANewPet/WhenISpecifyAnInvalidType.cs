@@ -28,7 +28,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
             _response = _server
                 .NewRequestTo($"/api/users/{_ownerId}/animals")
                 .Method(HttpMethod.Post)
-                .Send<Animal>("{'Name': 'Snuffles the Rabbit', 'Type': 99}");
+                .Send<Animal>("{'Name': 'Snuffles the Rabbit', 'Type': 'Stupid'}");
         }
 
         [Test]

@@ -29,7 +29,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenAPet
             var animalResponse = _server
                 .NewRequestTo($"/api/users/{userId}/animals")
                 .Method(HttpMethod.Post)
-                .Send<Animal>("{'Name': 'Sid the Sloth', 'Type': 1}");
+                .Send<Animal>("{'Name': 'Sid the Sloth', 'Type': 'Lazy'}");
 
             var animalId = animalResponse.Resource.Id;
             _animalPetTime = animalResponse.Resource.LastPet;

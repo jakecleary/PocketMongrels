@@ -1,5 +1,4 @@
 ﻿using System;
-using Type = JakeCleary.PocketMongrels.Core.Type;
 
 namespace JakeCleary.PocketMongrels.Api.Resourses
 {
@@ -7,7 +6,7 @@ namespace JakeCleary.PocketMongrels.Api.Resourses
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public int Type { get; set; }
+        public string Type { get; set; }
         public double Hunger { get; set; }
         public double Happiness { get; set; }
         public DateTime LastFeed { get; set; }
@@ -20,7 +19,7 @@ namespace JakeCleary.PocketMongrels.Api.Resourses
             {
                 Id = animal.Id,
                 Name = animal.Name,
-                Type = (int)animal.Type,
+                Type = animal.Type.ToString(),
                 Hunger = animal.Hunger,
                 Happiness = animal.Happiness,
                 LastFeed = animal.LastFeed,

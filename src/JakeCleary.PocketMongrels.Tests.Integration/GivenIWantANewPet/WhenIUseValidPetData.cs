@@ -28,7 +28,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
             _response = _server
                 .NewRequestTo($"/api/users/{_ownerId}/animals")
                 .Method(HttpMethod.Post)
-                .Send<Animal>("{'Name': 'Snuffles the Rabbit', 'Type': 0}");
+                .Send<Animal>("{'Name': 'Snuffles the Rabbit', 'Type': 'Fast'}");
         }
 
         [Test]
@@ -48,7 +48,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
         {
             Assert.That(_response.Resource.Id, Is.TypeOf<Guid>());
             Assert.That(_response.Resource.Name, Is.EqualTo("Snuffles the Rabbit"));
-            Assert.That(_response.Resource.Type, Is.EqualTo(0));
+            Assert.That(_response.Resource.Type, Is.EqualTo("Fast"));
         }
 
         [Test]
