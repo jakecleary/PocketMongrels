@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net;
 using System.Web.Http;
 using JakeCleary.PocketMongrels.Services;
 
@@ -32,8 +33,8 @@ namespace JakeCleary.PocketMongrels.Api.Controller
                 return NotFound();
 
             _animalService.Feed(animal);
-            
-            return Ok();
+
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         [HttpPost]
@@ -52,7 +53,7 @@ namespace JakeCleary.PocketMongrels.Api.Controller
 
             _animalService.Pet(animal);
 
-            return Ok();
+            return StatusCode(HttpStatusCode.NoContent);
         }
     }
 }
