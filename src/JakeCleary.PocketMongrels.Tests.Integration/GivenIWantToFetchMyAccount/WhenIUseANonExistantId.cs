@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
@@ -21,7 +22,8 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToFetchMyAccount
 
             _response = _server
                 .NewRequestTo(uri)
-                .Get<User>();
+                .Method(HttpMethod.Get)
+                .Send<User>();
         }
 
         [Test]

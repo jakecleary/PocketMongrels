@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Http;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
@@ -17,7 +18,8 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToFetchMyAccount
 
             _response = _server
                 .NewRequestTo("/api/users/this-is-not-a-valid-id")
-                .Get<User>();
+                .Method(HttpMethod.Get)
+                .Send<User>();
         }
 
         [Test]

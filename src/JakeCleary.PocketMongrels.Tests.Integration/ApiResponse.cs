@@ -4,35 +4,49 @@ using JakeCleary.PocketMongrels.Api.Resourses;
 
 namespace JakeCleary.PocketMongrels.Tests.Integration
 {
-    public class ApiResponse<T>
+    public class ApiResponse
     {
         public bool Success { get; set; }
         public HttpStatusCode StatusCode { get; set; }
+        public HttpResponseMessage RawResponse { get; set; }
+
+        public static ApiResponse From(HttpResponseMessage response)
+        {
+            return new ApiResponse
+            {
+                Success = response.IsSuccessStatusCode,
+                StatusCode = response.StatusCode,
+                RawResponse = response,
+            };
+        }
+    }
+
+    public class ApiResponse<T> : ApiResponse
+    {
         public T Resource { get; set; }
         public Error Errors { get; set; }
-        public HttpResponseMessage RawResponse { get; set; }
         public string Location => RawResponse.Headers.Location.ToString();
 
-        public static ApiResponse<T> From(HttpResponseMessage response)
+        public new static ApiResponse<T> From(HttpResponseMessage response)
         {
-            if (!response.IsSuccessStatusCode)
+            var apiResponse = new ApiResponse<T>
             {
-                return new ApiResponse<T>
-                {
-                    Success = false,
-                    StatusCode = response.StatusCode,
-                    Errors = response.Content.ReadAsAsync<Error>().Result,
-                    RawResponse = response
-                };
+                Success = response.IsSuccessStatusCode,
+                StatusCode = response.StatusCode,
+                RawResponse = response,
+            };
+
+            if (!apiResponse.Success)
+            {
+                apiResponse.Errors = response.Content.ReadAsAsync<Error>().Result;
             }
 
-            return new ApiResponse<T>
+            else
             {
-                Success = true,
-                StatusCode = response.StatusCode,
-                Resource = response.Content.ReadAsAsync<T>().Result,
-                RawResponse = response
-            };
+                apiResponse.Resource = response.Content.ReadAsAsync<T>().Result;
+            }
+
+            return apiResponse;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
@@ -19,13 +20,15 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
 
             var userResponse = _server
                 .NewRequestTo("/api/users/")
-                .Post<User>("{'Name': 'Jake'}");
+                .Method(HttpMethod.Post)
+                .Send<User>("{'Name': 'Jake'}");
 
             _ownerId = userResponse.Resource.Id;
 
             _response = _server
                 .NewRequestTo($"/api/users/{_ownerId}/animals")
-                .Post<Animal>("{'Name': 'Snuffles the Rabbit', 'Type': 0}");
+                .Method(HttpMethod.Post)
+                .Send<Animal>("{'Name': 'Snuffles the Rabbit', 'Type': 0}");
         }
 
         [Test]

@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Http;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
@@ -17,7 +18,8 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToCreateAnAccoun
 
             _response = _server
                 .NewRequestTo("/api/users")
-                .Post<User>("{'Name': 'UsernameWithTooManyCharacters'}");
+                .Method(HttpMethod.Post)
+                .Send<User>("{'Name': 'UsernameWithTooManyCharacters'}");
         }
 
         [Test]

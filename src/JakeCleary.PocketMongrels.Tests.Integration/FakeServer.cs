@@ -27,42 +27,39 @@ namespace JakeCleary.PocketMongrels.Tests.Integration
             return this;
         }
 
-        public ApiResponse<TResourse> Get<TResourse>()
+        public FakeServer Method(HttpMethod method)
         {
-            _request.Method = HttpMethod.Get;
+            _request.Method = method;
 
-            return Send<TResourse>();
+            return this;
         }
 
-        public ApiResponse<TResourse> Post<TResourse>(string content)
+        public ApiResponse Send(string content = null)
         {
-            _request.Method = HttpMethod.Post;
-            _request.Content = new StringContent(content, Encoding.UTF8, "application/json");
+            var response = PrepareAndSendRequest(content);
 
-            return Send<TResourse>();
+            return ApiResponse.From(response);
         }
 
-        public ApiResponse<TResourse> Put<TResourse>(string content)
+        public ApiResponse<TResource> Send<TResource>(string content = null)
         {
-            _request.Method = HttpMethod.Put;
-            _request.Content = new StringContent(content, Encoding.UTF8, "application/json");
-
-            return Send<TResourse>();
-        }
-
-        public ApiResponse<TResourse> Delete<TResourse>()
-        {
-            _request.Method = HttpMethod.Delete;
-
-            return Send<TResourse>();
-        }
-
-        public ApiResponse<TResource> Send<TResource>()
-        {
-            var response = TestServer.HttpClient.SendAsync(_request).Result;
-            _request = null;
+            var response = PrepareAndSendRequest(content);
 
             return ApiResponse<TResource>.From(response);
+        }
+
+        private HttpResponseMessage PrepareAndSendRequest(string content = null)
+        {
+            if (content != null)
+            {
+                _request.Content = new StringContent(content, Encoding.UTF8, "application/json");
+            }
+
+            var response = TestServer.HttpClient.SendAsync(_request).Result;
+
+            _request = null;
+
+            return response;
         }
     }
 }

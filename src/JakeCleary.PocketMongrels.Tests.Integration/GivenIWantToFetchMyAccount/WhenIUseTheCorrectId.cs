@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Net.Http;
 using JakeCleary.PocketMongrels.Api.Resourses;
 using NUnit.Framework;
 
@@ -19,14 +20,16 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToFetchMyAccount
 
             _userId = _server
                 .NewRequestTo("/api/users/")
-                .Post<User>("{'Name': 'Jake'}")
+                .Method(HttpMethod.Post)
+                .Send<User>("{'Name': 'Jake'}")
                 .Resource.Id;
 
             var uri = $"/api/users/{_userId}";
 
             _response = _server
                 .NewRequestTo(uri)
-                .Get<User>();
+                .Method(HttpMethod.Get)
+                .Send<User>();
         }
 
         [Test]
