@@ -17,7 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests.Integration", "JakeCleary.PocketMongrels.Tests.Integration\JakeCleary.PocketMongrels.Tests.Integration.csproj", "{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Test.Unit", "JakeCleary.PocketMongrels.Tests.Unit\JakeCleary.PocketMongrels.Test.Unit.csproj", "{193B69D7-8CB3-4C74-B3F4-4D87513C714B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FCDA2177-195A-476B-B191-1BB4B3D00463}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A02D0B9D-6BFD-42DC-9C7B-775C03C2FC79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JakeCleary.PocketMongrels.Tests.Unit", "JakeCleary.PocketMongrels.Tests.Unit\JakeCleary.PocketMongrels.Tests.Unit.csproj", "{193B69D7-8CB3-4C74-B3F4-4D87513C714B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,5 +64,15 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0BC1D44A-FBAE-47E2-A238-AB335842B834} = {FCDA2177-195A-476B-B191-1BB4B3D00463}
+		{8DDDA771-726D-48DD-91AA-5AD5A44681D1} = {FCDA2177-195A-476B-B191-1BB4B3D00463}
+		{C537C259-09D0-45FB-8272-8D3F80005E16} = {FCDA2177-195A-476B-B191-1BB4B3D00463}
+		{3CA9D871-EC95-4E98-8020-2B156F7DADB1} = {FCDA2177-195A-476B-B191-1BB4B3D00463}
+		{FB362363-D18B-445B-AC04-4504A2B78FF7} = {FCDA2177-195A-476B-B191-1BB4B3D00463}
+		{A2D30653-1D55-4F5D-9FC6-5F65A50A7C56} = {FCDA2177-195A-476B-B191-1BB4B3D00463}
+		{FE1F0E7F-CC4B-438F-A216-7A8129B1E7FF} = {A02D0B9D-6BFD-42DC-9C7B-775C03C2FC79}
+		{193B69D7-8CB3-4C74-B3F4-4D87513C714B} = {A02D0B9D-6BFD-42DC-9C7B-775C03C2FC79}
 	EndGlobalSection
 EndGlobal
