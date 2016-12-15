@@ -73,6 +73,7 @@
     <Compile Include="GivenAPet\WhenIFeedIt.cs" />
     <Compile Include="GivenAPet\WhenIPetIt.cs" />
     <Compile Include="GivenIWantANewPet\WhenISpecifyAnInvalidType.cs" />
+    <Compile Include="GivenIWantToCheckTheSystem\WhenIAskForTheStatus.cs" />
     <Compile Include="GivenIWantToFetchMyAccount\WhenIUseAnInvalidIdentifier.cs" />
     <Compile Include="GivenIWantToCreateAnAccount\WhenIUseInvalidUserData.cs" />
     <Compile Include="GivenIWantToCreateAnAccount\WhenIUseValidUserData.cs" />

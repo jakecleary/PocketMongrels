@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Controller\ActionsController.cs" />
     <Compile Include="Controller\AnimalsController.cs" />
+    <Compile Include="Controller\MetaController.cs" />
     <Compile Include="Controller\UsersController.cs" />
     <Compile Include="Filter\ModelValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

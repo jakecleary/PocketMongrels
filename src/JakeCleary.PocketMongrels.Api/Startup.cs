@@ -46,6 +46,7 @@ namespace JakeCleary.PocketMongrels.Api
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
                 options.ApiVersionReader = new HeaderApiVersionReader("X-API-Version");
+                options.ReportApiVersions = true;
             });
 
             app.UseAutofacMiddleware(lifetimeScope);
