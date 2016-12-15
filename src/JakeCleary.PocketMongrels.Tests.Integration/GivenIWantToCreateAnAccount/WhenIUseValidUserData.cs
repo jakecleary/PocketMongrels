@@ -12,7 +12,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToCreateAnAccoun
         private FakeServer _server;
         private ApiResponse<User> _response;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureInit()
         {
             _server = new FakeServer();
@@ -48,7 +48,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToCreateAnAccoun
         {
             var id = _response.Resource.Id;
 
-            Assert.That(_response.Location, Is.StringEnding($"/api/users/{id}"));
+            Assert.That(_response.Location, Does.EndWith($"/api/users/{id}"));
         }
     }
 }

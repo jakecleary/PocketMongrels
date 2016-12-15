@@ -13,7 +13,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
         private ApiResponse<Animal> _response;
         private Guid _ownerId;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureInit()
         {
             _server = new FakeServer();

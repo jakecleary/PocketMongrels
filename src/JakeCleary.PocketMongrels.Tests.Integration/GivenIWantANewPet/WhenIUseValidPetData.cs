@@ -13,7 +13,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
         private Guid _ownerId;
         private ApiResponse<Animal> _response;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureInit()
         {
             _server = new FakeServer();
@@ -70,7 +70,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantANewPet
         {
             var id = _response.Resource.Id;
 
-            Assert.That(_response.Location, Is.StringEnding($"/api/users/{_ownerId}/animals/{id}"));
+            Assert.That(_response.Location, Does.EndWith($"/api/users/{_ownerId}/animals/{id}"));
         }
     }
 }

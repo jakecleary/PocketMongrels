@@ -12,7 +12,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenIWantToFetchMyAccount
         private FakeServer _server;
         private ApiResponse<User> _response;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureInit()
         {
             _server = new FakeServer();

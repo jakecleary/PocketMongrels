@@ -14,7 +14,7 @@ namespace JakeCleary.PocketMongrels.Tests.Integration.GivenAPet
         private Animal _animal;
         private DateTime _animalPetTime;
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureInit()
         {
             _server = new FakeServer();
