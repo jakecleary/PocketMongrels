@@ -39,7 +39,7 @@ A HTTP driven Tamagotchi-like game built to learn the basics of C# and .NET. Com
     "LastFeed": "2016-12-07T12:40:18.7789036Z",
     "LastPet": "2016-12-07T12:41:01.0412902Z",
     "Born": "2016-12-07T12:37:42.8485645Z",
-    "Owner" {
+    "Owner": {
         "Guid": "e497ea45-76ee-49c4-b1be-70732176aa6e",
         "Name": "Jake"
     }
