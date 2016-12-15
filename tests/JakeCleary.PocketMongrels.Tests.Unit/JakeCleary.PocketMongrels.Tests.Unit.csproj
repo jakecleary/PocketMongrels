@@ -48,7 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JakeCleary.PocketMongrels.Core\JakeCleary.PocketMongrels.Core.csproj">
+    <ProjectReference Include="..\..\src\JakeCleary.PocketMongrels.Core\JakeCleary.PocketMongrels.Core.csproj">
       <Project>{0bc1d44a-fbae-47e2-a238-ab335842b834}</Project>
       <Name>JakeCleary.PocketMongrels.Core</Name>
     </ProjectReference>
