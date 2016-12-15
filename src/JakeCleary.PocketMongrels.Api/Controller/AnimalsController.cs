@@ -7,9 +7,11 @@ using System.Runtime.Versioning;
 using System.Web.Http;
 using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Data;
+using Microsoft.Web.Http;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
 {
+    [ApiVersion("1.0")]
     [RoutePrefix("api/users/{userId:guid}/animals")]
     public class AnimalsController : ApiController
     {

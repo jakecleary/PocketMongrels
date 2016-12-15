@@ -2,9 +2,11 @@
 using System.Web.Http;
 using JakeCleary.PocketMongrels.Api.Filter;
 using JakeCleary.PocketMongrels.Services;
+using Microsoft.Web.Http;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
 {
+    [ApiVersion("1.0")]
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {

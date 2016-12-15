@@ -3,9 +3,11 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 using JakeCleary.PocketMongrels.Services;
+using Microsoft.Web.Http;
 
 namespace JakeCleary.PocketMongrels.Api.Controller
 {
+    [ApiVersion("1.0")]
     [RoutePrefix("api/users/{userId:guid}/animals/{animalId:guid}")]
     public class ActionsController : ApiController
     {

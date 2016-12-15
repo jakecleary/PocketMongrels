@@ -34,6 +34,20 @@ namespace JakeCleary.PocketMongrels.Tests.Integration
             return this;
         }
 
+        public FakeServer Header(string key, string value)
+        {
+            _request.Headers.Add(key, value);
+
+            return this;
+        }
+
+        public FakeServer Version(string version)
+        {
+            Header("X-API-Version", version);
+
+            return this;
+        }
+
         public ApiResponse Send(string content = null)
         {
             var response = PrepareAndSendRequest(content);

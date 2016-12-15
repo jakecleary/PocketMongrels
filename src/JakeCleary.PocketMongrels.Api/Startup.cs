@@ -8,6 +8,7 @@ using JakeCleary.PocketMongrels.Data;
 using JakeCleary.PocketMongrels.Data.InMemory;
 using JakeCleary.PocketMongrels.Services;
 using Microsoft.Owin;
+using Microsoft.Web.Http.Versioning;
 using Owin;
 
 [assembly: OwinStartup(typeof(Startup))]
@@ -39,6 +40,13 @@ namespace JakeCleary.PocketMongrels.Api
 
             // Register any filters.
             Filters(config);
+
+            // Version the api.
+            config.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.ApiVersionReader = new HeaderApiVersionReader("X-API-Version");
+            });
 
             app.UseAutofacMiddleware(lifetimeScope);
             app.UseAutofacWebApi(config);
