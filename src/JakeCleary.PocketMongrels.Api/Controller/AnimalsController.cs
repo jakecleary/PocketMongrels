@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Runtime.Versioning;
 using System.Web.Http;
 using JakeCleary.PocketMongrels.Core;
 using JakeCleary.PocketMongrels.Data;
