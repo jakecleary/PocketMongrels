@@ -1,16 +1,11 @@
-Notes
-=====
+# PocketMongrels
 
-Questions
----------
-- How to properly unpack request bodies.
-- How to properly format responses (HttpResponseMessage etc)
+A HTTP driven Tamagotchi-like game built to learn the basics of C# and .NET. Completed as poart of a coding challenge.
 
-Next steps
-----------
-- Add a PetService that is responsible for any logic 
-  surrounding pets. Currently the controllers are doing to much (restoring 
-  hunger/happiness, resetting timers etc).
+- [Brief](docs/brief.md)
+- [Schema](docs/schema.md)
+
+## Todo
 - Split the petting/feeding out as 'action' resources. This would flatten
   the URI structure out a bit which currently uses chaining too much in 
   my opinion.

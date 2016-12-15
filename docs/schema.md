@@ -1,41 +1,32 @@
-Entities
-========
+# Schema
 
-User
-----
-- string : Name
+## Entities
 
-Animal
-------
-- string   : Name
-- Type     : Type
-- float    : Happiness
-- float    : Hunger
-- DateTime : LastPet
-- DateTime : LastFeed
+### User
+- `Guid` : Id
+- `string` : Name
 
+### Animal
+- `Guid` : Id
+- `string` : Name
+- `AnimalType` : Type
+- `float` : Happiness
+- `float` : Hunger
+- `DateTime` : LastPet
+- `DateTime` : LastFeed
+- `DateTime` : Born
 
-Type
-----
-- string : Name
-- int    : HappinessModifier
-- int    : HungerModifier
+## Routes
 
-Routes
-======
+### users
+- `POST /users`
+- `GET  /users/{id}`
 
-users
------
-POST /users
-GET  /users/{id}
+### animals
+- `POST /users/{id}/animals`
+- `GET  /users/{id}/animals`
+- `GET  /users/{id}/animals/{id}`
 
-animals
--------
-POST /users/{id}/animals
-GET  /users/{id}/animals
-GET  /users/{id}/animals/{id}
-
-feeding/petting
----------------
-POST /users/{id}/animals/{id}/feed
-POST /users/{id}/animals/{id}/pet
+### feeding/petting
+- `POST /users/{id}/animals/{id}/feed`
+- `POST /users/{id}/animals/{id}/pet`
